@@ -1,47 +1,63 @@
 package modelo;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Categoria {
 
     private int idcategoria;
-    private String nomCategoria;
-    private String clasificacion;
-    private String subCategoria;
+    private StringProperty nomCategoria = new SimpleStringProperty();
+    private StringProperty clasificacion = new SimpleStringProperty();
+    private StringProperty subCategoria = new SimpleStringProperty();
 
     public Categoria(int idcategoria, String nomCategoria, String clasificacion, String subCategoria){
         this.idcategoria = idcategoria;
-        this.nomCategoria = nomCategoria;
-        this.clasificacion = clasificacion;
-        this.subCategoria = subCategoria;
+        this.nomCategoria.set(nomCategoria) ;
+        this.clasificacion.set(clasificacion);
+        this.subCategoria.set(subCategoria);
     }
 
-    public int getIdcategoria() { return idcategoria;}
+    public int getIdcategoria() {
+        return idcategoria;
+    }
 
-    public void setIdcategoria(int idcategoria) {this.idcategoria = idcategoria;}
+    public void setIdcategoria(int idcategoria) {
+        this.idcategoria = idcategoria;
+    }
 
-    public String getCategoria() {
+    public String getNomCategoria() {
+        return nomCategoria.get();
+    }
+
+    public StringProperty nomCategoriaProperty() {
         return nomCategoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.nomCategoria = categoria;
+    public void setNomCategoria(String nomCategoria) {
+        this.nomCategoria.set(nomCategoria);
     }
 
     public String getClasificacion() {
+        return clasificacion.get();
+    }
+
+    public StringProperty clasificacionProperty() {
         return clasificacion;
     }
 
     public void setClasificacion(String clasificacion) {
-        this.clasificacion = clasificacion;
+        this.clasificacion.set(clasificacion);
     }
 
     public String getSubCategoria() {
+        return subCategoria.get();
+    }
+
+    public StringProperty subCategoriaProperty() {
         return subCategoria;
     }
 
     public void setSubCategoria(String subCategoria) {
-        this.subCategoria = subCategoria;
+        this.subCategoria.set(subCategoria);
     }
-
-
-
 }

@@ -10,7 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import modelo.Categoria;
 import modelo.conexion;
 
-import java.awt.*;
+
 import java.sql.SQLException;
 
 public class Controller {
@@ -18,14 +18,11 @@ public class Controller {
     @FXML
     private AnchorPane idLogin;
 
-    @FXML
-    private TextField iduser;
+
 
     @FXML
     private PasswordField idpassword;
 
-    @FXML
-    private Label iderrorlabel;
 
     @FXML
     private AnchorPane idlistaCategoria;
@@ -33,14 +30,7 @@ public class Controller {
     @FXML
     private ComboBox<?> comboclasificacion;
 
-    @FXML
-    private TextField texfieldcategoria;
 
-    @FXML
-    private TextField texfieldsubCategoria;
-
-    @FXML
-    private Button idButtonGI;
 
     @FXML
     private TableView<Categoria> tablalistacategoria;
@@ -66,6 +56,7 @@ public class Controller {
 
     @FXML
     public void mySql() throws SQLException, ClassNotFoundException {
+        idMenu.setVisible(true);
         conexion conexion1 = new conexion();
         conexion1.obtenerCategoria();
     }
@@ -78,10 +69,8 @@ public class Controller {
         idCategoria.setCellValueFactory(new PropertyValueFactory("nomCategoria"));
         idClasificacion.setCellValueFactory(new PropertyValueFactory("clasificacion"));
         idSubcategoria.setCellValueFactory(new PropertyValueFactory("subCategoria"));
-
-
-        idMenu.setVisible(false);
         idlistaCategoria.setVisible(true);
+        idMenu.setVisible(false);
     }
 
 }
