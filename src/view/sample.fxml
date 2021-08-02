@@ -1,8 +1,314 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="controller.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="713.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+    <children>
+        <AnchorPane fx:id="idLogin" layoutX="55.0" layoutY="62.0" prefHeight="508.0" prefWidth="665.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="590.0" prefWidth="713.0" style="-fx-background-color: #395C67;">
+                    <children>
+                        <AnchorPane layoutX="27.0" layoutY="55.0" prefHeight="480.0" prefWidth="659.0" style="-fx-background-color: ffffff; -fx-border-color: black;">
+                            <children>
+                                <Text fill="#131417" layoutX="388.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenid@" wrappingWidth="159.0">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="28.0" />
+                                    </font>
+                                </Text>
+                                <ImageView fitHeight="250.0" fitWidth="368.0" layoutX="10.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/login.png" />
+                                    </image>
+                                </ImageView>
+                                <VBox layoutX="388.0" layoutY="130.0" spacing="20.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese su nombre">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="14.0" />
+                                            </font>
+                                        </Text>
+                                        <TextField fx:id="iduser" prefHeight="27.0" prefWidth="242.0" style="-fx-border-color: black; -fx-background-color: #EBEBEB;" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="14.0" />
+                                            </font>
+                                        </Text>
+                                        <PasswordField fx:id="idpassword" style="-fx-background-color: #EBEBEB; -fx-border-color: black;" />
+                                        <Label fx:id="iderrorlabel" />
+                                        <Button mnemonicParsing="false" onAction="#mySql" prefHeight="27.0" prefWidth="243.0" style="-fx-background-color: #FEC101; -fx-border-color: black;" text="Iniciar" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Black" size="12.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <Text layoutX="125.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cashflow">
+                                    <font>
+                                        <Font name="Dosis SemiBold" size="44.0" />
+                                    </font>
+                                </Text>
+                                <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/pngwing.com.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </children></AnchorPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="idlistaCategoria" layoutX="7.0" layoutY="5.0" prefHeight="508.0" prefWidth="665.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane layoutY="-2.0" prefHeight="590.0" prefWidth="713.0" style="-fx-background-color: #EBEBEB;" visible="false">
+                    <children>
+                        <AnchorPane layoutX="7.0" layoutY="14.0" prefHeight="529.0" prefWidth="690.0" style="-fx-background-color: white; -fx-border-color: black;">
+                            <children>
+                                <Text fill="#3f625c" layoutX="19.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Categorías">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="18.0" />
+                                    </font>
+                                </Text>
+                                <AnchorPane prefHeight="56.0" prefWidth="699.0" style="-fx-background-color: #BDDAA5; -fx-border-color: black;">
+                                    <children>
+                                        <Text fill="#3f625c" layoutX="87.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorías (GAOs, Costos de Venta e Ingresos)"><font>
+                                            <Font name="Comic Sans MS" size="20.0" />
+                                        </font></Text>
+                                        <ImageView fitHeight="47.0" fitWidth="53.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/pngwing.com.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                                <Button layoutX="14.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-radius: 10px; -fx-background-color: #FEC101;" text="Back Menu">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="13.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <AnchorPane layoutX="396.0" layoutY="112.0" prefHeight="256.0" prefWidth="276.0" style="-fx-background-color: #8FC9AE; -fx-border-color: black; -fx-background-radius: 20px;">
+                                    <children>
+                                        <VBox layoutX="102.0" layoutY="32.0" spacing="30.0">
+                                            <children>
+                                                <ComboBox fx:id="comboclasificacion" prefWidth="150.0" promptText="Opciones" style="-fx-background-color: white; -fx-border-color: black;" />
+                                                <TextField fx:id="texfieldcategoria" style="-fx-border-color: black;" />
+                                                <TextField fx:id="texfieldsubCategoria" style="-fx-border-color: black;" />
+                                                <Button fx:id="idButtonGI" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #558E87; -fx-background-radius: 15px; -fx-border-color: black;" text="Guardar/Editar" textFill="WHITE">
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                    <font>
+                                                        <Font name="Comic Sans MS Bold" size="14.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutY="32.0" spacing="40.0">
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clasificación">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="12.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="12.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sub-Categoría">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="12.0" />
+                                                    </font>
+                                                </Text>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                                <TableView fx:id="tablalistacategoria" layoutX="19.0" layoutY="115.0" prefHeight="250.0" prefWidth="331.0" style="-fx-border-color: black;">
+                           <columns>
+                              <TableColumn fx:id="idID" prefWidth="75.0" text="Id" />
+                              <TableColumn fx:id="idClasificacion" prefWidth="75.0" text="Clasificacion" />
+                              <TableColumn fx:id="idCategoria" prefWidth="75.0" text="Categoria" />
+                              <TableColumn fx:id="idSubcategoria" prefWidth="97.33332824707031" text="Subcategoria" />
+                           </columns></TableView>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="7.0" layoutY="543.0" prefHeight="25.0" prefWidth="701.0" style="-fx-background-color: #BDDAA5; -fx-border-color: black;" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="idflujoEfectivo" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="665.0" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
+            <children>
+                <AnchorPane layoutY="-11.0" prefHeight="597.0" prefWidth="713.0" style="-fx-background-color: #E2E7E3;" />
+                <AnchorPane layoutX="22.0" layoutY="5.0" prefHeight="569.0" prefWidth="678.0" style="-fx-border-color: black; -fx-background-color: white;">
+                    <children>
+                        <TableView fx:id="tableFlujoEfectivo" layoutX="80.0" layoutY="14.0" prefHeight="279.0" prefWidth="518.0" style="-fx-border-color: black;" />
+                        <Button layoutX="11.0" layoutY="531.0" mnemonicParsing="false" style="-fx-background-color: #FEC101; -fx-background-radius: 10px;" text="Back Menu">
+                            <font>
+                                <Font name="Comic Sans MS Bold" size="12.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <AnchorPane layoutX="80.0" layoutY="309.0" prefHeight="200.0" prefWidth="518.0" style="-fx-background-color: #FE7348; -fx-background-radius: 10px; -fx-border-color: black;">
+                            <children>
+                                <CheckBox fx:id="checkEntrada" layoutX="22.0" layoutY="44.0" mnemonicParsing="false" text="Entrada">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="checkSalida" layoutX="22.0" layoutY="82.0" mnemonicParsing="false" text="Salida">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </CheckBox>
+                                <Label layoutX="145.0" layoutY="5.0" text="Seleccione el tipo de flujo a registrar">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="148.0" layoutY="44.0" text="Categoria: ">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="148.0" layoutY="82.0" text="Descripcion: ">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="texfieldDescripcion" layoutX="243.0" layoutY="78.0" prefHeight="27.0" prefWidth="254.0" style="-fx-border-color: black;" />
+                                <Label layoutX="145.0" layoutY="122.0" text="Cantidad: ">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="texfieldCantidad" layoutX="243.0" layoutY="118.0" prefHeight="27.0" prefWidth="97.0" style="-fx-border-color: black;" />
+                                <Button layoutX="310.0" layoutY="159.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="194.0" style="-fx-background-color: #395C67; -fx-background-radius: 10px; -fx-border-color: black;" text="Guardar" textFill="WHITE">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="15.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <ComboBox fx:id="combo2" layoutX="243.0" layoutY="41.0" prefHeight="25.0" prefWidth="254.0" promptText="Opciones" style="-fx-background-color: white; -fx-border-color: black;" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="idMenu" layoutY="11.0" prefHeight="508.0" prefWidth="665.0" style="-fx-background-color: ffffff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="556.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: #EBEBEB;">
+                    <children>
+                        <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/pngwing.com.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="56.0" fitWidth="58.0" layoutX="8.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/lo1.png" />
+                            </image>
+                        </ImageView>
+                        <Line endX="34.5" endY="166.0" layoutX="1.0" layoutY="3.0" startX="34.50001525878906" startY="85.0" />
+                        <ImageView fitHeight="71.0" fitWidth="80.0" layoutX="-4.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/bank.png" />
+                            </image>
+                        </ImageView>
+                        <Line endX="34.5" endY="166.0" layoutX="3.0" layoutY="212.0" startX="34.50001525878906" startY="85.0" />
+                    </children>
+                </AnchorPane>
+                <Text layoutX="169.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finanzas">
+                    <font>
+                        <Font name="Comic Sans MS" size="27.0" />
+                    </font>
+                </Text>
+                <Button layoutX="574.0" layoutY="483.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #FEC101; -fx-border-color: black; -fx-border-radius: 20px;" text="Exit" textFill="WHITE">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <AnchorPane layoutX="98.0" layoutY="195.0" prefHeight="200.0" prefWidth="194.0" style="-fx-border-color: black; -fx-background-color: ffffff; -fx-border-radius: 10px;">
+                    <children>
+                        <Button layoutX="12.0" layoutY="147.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="170.0" style="-fx-background-color: #395C67; -fx-border-color: black; -fx-border-radius: 30px;" text="Categorias" textFill="WHITE">
+                            <font>
+                                <Font name="Comic Sans MS Bold" size="15.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Text layoutX="6.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Es importante tener actualizado elnombre de cada una de las categoríasen las que se clasifican los gastosoperativos, gastos administrativos,costos de venta e ingresos." textAlignment="CENTER" wrappingWidth="182.0">
+                            <font>
+                                <Font name="Comic Sans MS" size="10.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="305.0" layoutY="195.0" prefHeight="200.0" prefWidth="194.0" style="-fx-border-color: black; -fx-background-color: #8FC9AE; -fx-border-radius: 10px;">
+                    <children>
+                        <Button layoutX="6.0" layoutY="147.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: ffffff; -fx-border-color: black; -fx-border-radius: 30px;" text="Flujo de efectivo">
+                            <font>
+                                <Font name="Comic Sans MS Bold" size="14.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Text layoutX="12.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de las entradas y salidas que se realizan durante el dia. No esposible modificar los registros al menos que tenga la autorización correspondiente." textAlignment="CENTER" wrappingWidth="170.0">
+                            <font>
+                                <Font name="Comic Sans MS" size="10.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="511.0" layoutY="195.0" prefHeight="200.0" prefWidth="194.0" style="-fx-border-color: black; -fx-background-color: #EBEBEB; -fx-border-radius: 10px;">
+                    <children>
+                        <Button layoutX="8.0" layoutY="147.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #8FC9AE; -fx-border-color: black; -fx-border-radius: 30px;" text="Indicadores de dinero" textFill="WHITE">
+                            <font>
+                                <Font name="Comic Sans MS Bold" size="14.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Text layoutX="42.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro semanal de cuentas por cobrar, por pagar y bancos.Reportes de indicadores semanales ymensuales." textAlignment="CENTER" wrappingWidth="114.0">
+                            <font>
+                                <Font name="Comic Sans MS" size="10.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
